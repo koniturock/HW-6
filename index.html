@@ -4,8 +4,8 @@
   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Animal Buttons</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 
 </head>
@@ -13,7 +13,7 @@
 <body>
 
   <div class="container">
-  <h2>Button Styles</h2>
+  <h2>Animal Buttons</h2>
   <button data-animal="dog">dog</button>
   <button data-animal="cat">cat</button>
   <button data-animal="rabbit">rabbit</button>
@@ -35,8 +35,12 @@
   <button data-animal="serval">serval</button> 
   <button data-animal="salamander">salamander</button> 
   <button data-animal="frog">frog</button> 
-  <form>
-    <span id="toDo-Item">Add an Animal: <input id="to-do" type="text" ><input id="add-to-do" value="Add Item" type="submit"></span>
+  
+  <form class="form-inline">
+  <div class="form-group">
+      <input type="text" class="form-control" placeholder="Write your topic here" id="submitBox">
+      <button type="submit" class="btn btn-primary" id="submitTerm">Submit</button>
+  </div>
   </form>
 
   </div>
@@ -94,6 +98,8 @@ $(document).ready(function() {
       $(this).attr('src',$(this).data('still'));
 
     }
+    $('#submitTerm').click(searchGifs.addgifCategory);
+    $(document).on('click', '.searchButtons', searchGifs.displayResults);
   });
 });
 
